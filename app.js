@@ -9,26 +9,9 @@ var db = mongojs('customerapp', ['users']);
 var expressValidator=require('express-validator');
 
 var app = express();
-
-// var logger = function(req,res ,next){
-
-//     console.log('logging.........');
-//     next();
-
-// }
-
-// app.use(logger);
-
-
-
-
 //view Engine
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
-
-
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -115,10 +98,11 @@ if(err){
 console.log(err);
 }
 else{
-    res.redirect('http://google.com');
+   console.log('success');
 }
 
     });
+    res.redirect('/');
 }
 
 console.log('success');
